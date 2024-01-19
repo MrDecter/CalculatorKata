@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bab2e374-75c5-4b41-ba34-3e760db9e7fd" name="Changes" comment="-Добавление основных функций">
+    <list default="true" id="bab2e374-75c5-4b41-ba34-3e760db9e7fd" name="Changes" comment="-Доавлена функция поиска оператора">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -85,11 +85,20 @@
       <option name="project" value="LOCAL" />
       <updated>1705592038675</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="-Доавлена функция поиска оператора">
+      <option name="closed" value="true" />
+      <created>1705601704343</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705601704343</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-Добавление основных функций" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Добавление основных функций" />
+    <MESSAGE value="-Доавлена функция поиска оператора" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Доавлена функция поиска оператора" />
   </component>
 </project>
