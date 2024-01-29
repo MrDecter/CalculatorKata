@@ -4,106 +4,56 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
                                             // Основной класс
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner str = new Scanner(System.in);
         String input = str.next();
-        System.out.println(calc(input));
+        System.out.println("Итог: " + calc(input));
     }
                                             //Класс калькулятора
-    public static String calc(String input){
-        int x = Integer.parseInt(DivisionLine(input,0));
-        int y = Integer.parseInt(DivisionLine(input,1));;
+    public static String calc(String input) throws Exception {
         String oper = SearchOper(input);
-        int res = 0;
-        switch (oper) {
-            case "+" -> res = x + y;
-            case "-" -> res = x - y;
-            case "/" -> res = x / y;
-            case "*" -> res = x * y;
-        }
-        return Integer.toString(res);
+        String x = DivisionLine(input,0);
+        String y = DivisionLine(input,1);
+        System.out.println();
+        int result = 0;
+        return Integer.toString(result);
     }
-    static String SearchOper(String input){
+                                            //Проверка выражения и получение операнда
+    static String SearchOper(String input) throws Exception {
         String oper = "";
-            if(input.indexOf( '+' )>0){
-                oper = "+";
-            }else if(input.indexOf( '-' )>0){
-                oper = "-";
-            }else if(input.indexOf( '/' )>0){
-                oper = "/";
-            }else if(input.indexOf( '*' )>0){
-                oper = "*";
-            }else{
-                System.out.println("Неверная операция!");
-            }
+        String[] opers = input.split("[+\\-*/]");
+        if (opers.length != 2) throw new Exception("Более двух чисел!");
+        if(input.indexOf( '+' )>0){
+            oper = "+";
+        }else if(input.indexOf( '-' )>0){
+            oper = "-";
+        }else if(input.indexOf( '/' )>0){
+            oper = "/";
+        }else if(input.indexOf( '*' )>0) {
+            oper = "*";
+        }else {
+            oper = null;
+        }
+        if(oper == null) throw new Exception("Неверная операция!");
         return oper;
     }
-                                            //Деление строки
+                                            //Получение чисел
     static String DivisionLine(String str, int index){
         String[] ind = {};
         String numbers = "0";
         if(str.indexOf( '+' )>0){
             ind = str.split( "[+]");
-            if (NumElem(ind)){
-                numbers = ind[index];
-            }else{
-                System.out.println("Больше 2-х элементов!");
-            }
+            numbers = ind[index];
         }else if(str.indexOf( '-' )>0){
             ind = str.split( "[-]");
-            if (NumElem(ind)){
-                numbers = ind[index];
-            }else{
-                System.out.println("Больше 2-х элементов!");
-            }
+            numbers = ind[index];
         }else if(str.indexOf( '/' )>0){
             ind = str.split( "[/]");
-            if (NumElem(ind)){
-                numbers = ind[index];
-            }else{
-                System.out.println("Больше 2-х элементов!");
-            }
-        }else if(str.indexOf( '*' )>0){
-            ind = str.split( "[*]");
-            if (NumElem(ind)){
-                numbers = ind[index];
-            }else{
-                System.out.println("Больше 2-х элементов!");
-            }
-        }else{
-            System.out.println("Неверная операция!");
+            numbers = ind[index];
+        }else if(str.indexOf( '*' )>0) {
+            ind = str.split("[*]");
+            numbers = ind[index];
         }
         return numbers;
-    }
-                                            //Проверка кол-ва цифр
-    static boolean NumElem (String[] x){
-        boolean log;
-        if (x.length > 2){
-            log = false;
-        }else {
-            log = true;
-        }
-        return log;
-    }
-
-                                            //Проверка типа
-    static String ArabOrRoman(String str){
-        String[] Roman = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
-        String[] Arab = {"1","2","3","4","5","6","7","8","9","10"};
-        return str;
-    }
-
-                                            //Проверка кол-ва чисел
-    static boolean Numbers(String input){
-        if (input.length() > 2){
-            return false;
-        }else{
-            return true;
-        }
-    }
-                                            //Подсчет с использованием Римских цифр
-    static int RomanInt(String input){
-        String[] Roman = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
-        return 0;
     }
 }
