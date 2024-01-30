@@ -65,9 +65,9 @@ public class Main {
         return numbers;
     }
                                             // Опредиление системы счисления
-    static String ArabOrRoman(String x, String y) {
-        String[] roman_nums = {"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"};
-        String[] arab_nums = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+    static String ArabOrRoman(String x, String y) throws Exception {
+        String[] roman_nums = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        String[] arab_nums = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
         String num_sys_x = "";
         String num_sys_y = "";
         for (String string : roman_nums) {
@@ -96,9 +96,8 @@ public class Main {
         }
         if (num_sys_x == "roman" & num_sys_y == "roman" || num_sys_x == "arab" & num_sys_y == "arab") {
             return num_sys_x;
-        } else {
-            return null;
-        }
+        } else if (num_sys_x != "roman" || num_sys_x != "arab") throw new Exception("Число меньше 1 или больше 10!"){};
+        return null;
     }
                                             // Вычисления Римской системы счислений
     static String roman_int_sys (String x, String y, String z){
