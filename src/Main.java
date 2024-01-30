@@ -94,6 +94,7 @@ public class Main {
                 break;
             } else {}
         }
+        if (num_sys_x == "roman" & num_sys_y == "arab" || num_sys_x == "arab" & num_sys_y == "roman") throw new Exception("Разные системы счисления");
         if (num_sys_x == "roman" & num_sys_y == "roman" || num_sys_x == "arab" & num_sys_y == "arab") {
             return num_sys_x;
         } else if (num_sys_x != "roman" || num_sys_x != "arab") throw new Exception("Число меньше 1 или больше 10!"){};
