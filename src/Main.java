@@ -102,7 +102,7 @@ public class Main {
     }
                                             // Вычисления Римской системы счислений
     static String roman_int_sys (String x, String y, String z) throws Exception {
-        String[] roman_nums = {"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"};
+        String[] roman_nums = {"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX","XXI","XXII","XXIII","XXIV","XXV","XXVI","XXVII","XXVIII","XXIX","XXX","XXXI","XXXII","XXXIII","XXXIV","XXXV","XXXVI","XXXVII","XXXVIII","XXXIX","XL","XLI","XLII","XLIII","XLIV","XLV","XLVI","XLVII","XLVIII","XLIX","L","LI","LII","LIII","LIV","LV","LVI","LVII","LVIII","LIX","LX","LXI","LXII","LXIII","LXIV","LXV","LXVI","LXVII","LVXIII","LXIX","LXX","LXXI","LXXII","LXXIII","LXXIV","LXXV","LXXVI","LXXVII","LXXVIII","LXXIX","LXXX","LXXXI","LXXXII","LXXXIII","LXXXIV","LXXXV","LXXXVI","LXXXVII","LXXXVIII","LXXXIX","XC","XCI","XCII","XCIII","XCIV","XCV","XCVI","XCVII","XCVIII","XCIX","C"};
         int num_x = roman_to_arab(x);
         int num_y = roman_to_arab(y);
         int result = switch (z) {
@@ -113,7 +113,7 @@ public class Main {
             default -> 0;
         };
         if(result < 1) throw new Exception("Невозможный нулевой или отрицательный результат"){};
-        if(result > 20) throw new Exception("Итоговое значение больше 20!"){};
+
         return roman_nums[result];
     }
                                             // Вычисление Арабской системы счислений
@@ -135,6 +135,8 @@ public class Main {
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
+        map.put('L', 50);
+        map.put('С', 100);
 
         int end_char = num.length() - 1;
         char[] arr = num.toCharArray();
