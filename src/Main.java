@@ -113,6 +113,7 @@ public class Main {
             default -> 0;
         };
         if(result < 1) throw new Exception("Невозможный нулевой или отрицательный результат"){};
+        if(result > 20) throw new Exception("Итоговое значение больше 20!"){};
         return roman_nums[result];
     }
                                             // Вычисление Арабской системы счислений
