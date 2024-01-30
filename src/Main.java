@@ -100,7 +100,7 @@ public class Main {
         return null;
     }
                                             // Вычисления Римской системы счислений
-    static String roman_int_sys (String x, String y, String z){
+    static String roman_int_sys (String x, String y, String z) throws Exception {
         String[] roman_nums = {"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"};
         int num_x = roman_to_arab(x);
         int num_y = roman_to_arab(y);
@@ -111,11 +111,8 @@ public class Main {
             case "/" -> num_x / num_y;
             default -> 0;
         };
-        if(result < 0 ){
-            return roman_nums[0];
-        }else {
-            return roman_nums[result];
-        }
+        if(result < 1) throw new Exception("Невозможный нулевой или отрицательный результат"){};
+        return roman_nums[result];
     }
                                             // Вычисление Арабской системы счислений
     static String arab_int_sys (String x, String y, String z){
